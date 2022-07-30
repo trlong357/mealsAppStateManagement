@@ -20,6 +20,7 @@ class MealsListScreen extends StatelessWidget {
     final categoryMeals = availableMeals.where((meal) {
       return meal.categories.contains(categoryID);
     }).toList();
+    print(categoryMeals);
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryTitle!),
@@ -33,7 +34,7 @@ class MealsListScreen extends StatelessWidget {
               affordability: categoryMeals[index].affordability,
               complexity: categoryMeals[index].complexity,
             )),
-        itemCount: availableMeals.length,
+        itemCount: categoryMeals.length,
       ),
     );
   }
